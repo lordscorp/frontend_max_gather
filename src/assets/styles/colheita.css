@@ -1,0 +1,86 @@
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .1s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+#orchard {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+.tree {
+	min-width: 90px;
+  height: 220px;
+  margin: 2px;
+  padding: 5px;
+}
+.crown {
+	background-color: #70ce86;
+  text-align: center;
+  padding: 10px;
+  border-radius: 40%;
+  height: 4em;
+  line-height: 3em;
+}
+.crown span {
+	background-color: #ec2828;
+  font-weight: bold;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+}
+.trunk {
+	background-color: brown;
+	color: pink;
+	font-size: 12px;
+	width: 40px;
+	height: 120px;
+	margin: auto;
+	text-align: center;
+	margin-top: -4px;
+	border-radius: 5px;
+}
+.carla {
+	background-color: #FFDDAA
+}
+
+.marcelo {
+	background-color: #AABBFF
+}
+
+#app {
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+footer {
+	position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5;
+}
+
+footer p {
+	display: inline-block;
+	margin-left: 1em;
+}
+
+footer span {
+	position: absolute;
+	right: 1em;
+}
