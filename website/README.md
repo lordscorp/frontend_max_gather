@@ -1,7 +1,7 @@
 **Otimizador de Coleta - SPA**
 ----
 
-Interface desenvolvida para calcular a melhor coleta num dado intervalo.
+Interface calcular a melhor coleta num dado intervalo.
 
 Formulário com 2 inputs fixos `int` e um input dinâmico, que pode ser alternado entre um input `text` e múltiplos inputs `int`, utilizando a opção _Utilizar o modo de inserção em lote_.
 

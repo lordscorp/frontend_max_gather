@@ -77,7 +77,8 @@
 
 <script>
 	import axios from 'axios'
-
+	// Componente principal
+	// @group Otimizador de Coleta
 	export default {
 		name: 'Colheita',
 		data() {
@@ -125,13 +126,14 @@
 			}
 		},
 		methods: {
+			// @vuese
 			/**
 			 * Obtém número máximo de maçãs em intervalos contínuos K e L,
 			 * dentro de um determinado array de árvores
 			 * 
-			 * @param {array} A : Array de inteiros - número de maçãs por árvore
-			 * @param {int} K : Tamanho do intervalo de coleta de Marcelo 
-			 * @param {int} L : Tamanho do intervalo de coleta de Carla
+			 * @arg {array} A : Array de inteiros - número de maçãs por árvore
+			 * @arg {int} K : Tamanho do intervalo de coleta de Marcelo 
+			 * @arg {int} L : Tamanho do intervalo de coleta de Carla
 			 */
 			getMaxApples(A = [0], K = 1, L = 1) {
 				const path = process.env.VUE_APP_API_URL
@@ -153,8 +155,10 @@
 				})
 				.catch((e) => {
 					console.error(e)
+					this.showMessage("Ocorreu um erro no servidor. Por favor, verifique se a API está sendo executada e está aceitando conexões.", "danger", 10000)
 				})
 			},
+			// @vuese
 			/**
 			 *	Converte string para array (ao editar inserção em lote e voltar para inserção item-a-item)
 			 */
@@ -173,6 +177,7 @@
 					this.trees[i] = parseInt(this.trees[i]) || 0
 				}
 			},
+			// @vuese
 			/**
 			 *	Verifica comprimento do array 'trees' e remove o último item, se possível
 			 */
@@ -182,22 +187,25 @@
 				else
 					this.showMessage("É necessário haver ao menos 1 (uma) árvore.", "warning", 5000)
 			},
+			// @vuese
 			/**
 			 *	Exibe mensagens para o usuário.
-			 * @param {string} message : Mensagem a ser exibida.
-			 * @param {string} msgType (opcional) : Tipo de mensagem (para definir estilo css)
+			 * @arg {string} message : Mensagem a ser exibida.
+			 * @arg {string} msgType (opcional) : Tipo de mensagem (para definir estilo css)
 			 */
 			showMessage(message, msgType = "info", lifespan = 10000) {
 				this.alertMessage.text = message
 				this.alertMessage.type = msgType
 				window.setTimeout((()=>{ this.alertMessage.text = null }), lifespan);
 			},
+			// @vuese
 			/**
 			 *	Oculta mensagem atual.
 			 */
 			hideMessage() {
 				this.alertMessage.text = null
 			},
+			// @vuese
 			/**
 			 *	Valida os valores de entrada e chama a função getMaxApples()
 			 */
@@ -212,9 +220,10 @@
 					}
 				}
 			},
+			// @vuese
 			/**
 			 *	Verifica se árvore no índice informado deve ter seus frutos coletados por Marcelo ou Carla
-			 * @param {int} treeIndex : Índice do array trees
+			 * @arg {int} treeIndex : Índice do array trees
 			 */
 			gatherMark(treeIndex){
 				if (treeIndex >= this.marceloStart && treeIndex < (this.marceloStart+this.marcelo))
@@ -224,8 +233,10 @@
 				else
 					return ""
 			},
+			// @vuese
 			/**
 			 *	Coloca a primeira letra do nome em maiúscula
+			 *	@arg {string} text : Texto a ser capitalizado
 			 */
 			 capitalize(text){
 			 	if(typeof text === "string")			 		
